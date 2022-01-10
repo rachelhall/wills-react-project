@@ -1,6 +1,6 @@
 import React from "react";
 
-function AddFishForm(props) {
+function AddFishForm({ addFish }) {
   const nameRef = React.createRef();
   const priceRef = React.createRef();
   const statusRef = React.createRef();
@@ -17,7 +17,7 @@ function AddFishForm(props) {
       desc: descRef.current.value,
       image: imageRef.current.value,
     };
-    props.addFish(fish);
+    addFish(fish);
     // Refresh the form
     event.currentTarget.reset();
   }

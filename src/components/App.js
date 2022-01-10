@@ -9,13 +9,18 @@ import Fish from "./Fish";
 function App() {
   const [fishes, setFishes] = useState({});
   const [order, setOrder] = useState({});
+
   function addFish(fish) {
     // 1. Take a copy of the existing state
-    // const fishes = { ...fishes };
-    // 2. Add our new fish to that fishes variable
-    fishes[`fish${Date.now()}`] = fish;
+
+    const fishesCopy = { ...fishes };
+
+    // takes the copied array of current fishes, inserts a new key value of 'fishDate' and gives the value of new fish object
+    fishesCopy[`fish${Date.now()}`] = fish;
+
     // 3. Set the new fishes object to state
-    setFishes(fishes);
+
+    setFishes(fishesCopy);
   }
   function loadSampleFishes() {
     setFishes(sampleFishes);
