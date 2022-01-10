@@ -17,7 +17,6 @@ function App() {
 
     // takes the copied array of current fishes, inserts a new key value of 'fishDate' and gives the value of new fish object
     fishesCopy[`fish${Date.now()}`] = fish;
-
     // 3. Set the new fishes object to state
 
     setFishes(fishesCopy);
@@ -27,14 +26,13 @@ function App() {
   }
   function addToOrder(key) {
     // 1. Take a copy of state
-    // const order = { ...order };
-    console.log("Step 1: Working");
+    const orderCopy = { ...order };
 
     // 2. Either add to the order, or update the number in our order
-    order[key] = order[key] + 1 || 1;
+    orderCopy[key] = orderCopy[key] + 1 || 1;
     console.log("Step 2: Working");
     // 3. Call setState to update our state object
-    setOrder(order);
+    setOrder(orderCopy);
     console.log("Step 3: Working");
   }
 
